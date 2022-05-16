@@ -1,5 +1,9 @@
 import numpy as np
 import pandas as pd
+from Services.DefineFAType import DefineFAType
+from Services.FAStringTesting import FAStringTesting
+from Services.NfaToDfa import NfaToDfa
+from Services.MinimizeDfa import MinimizeDfa
 
 def divider():
     print(*["-" for i in range(20)])
@@ -52,7 +56,30 @@ print("FA table transition:")
 
 divider()
 
-print("Functionality:")
-func_name = [" 1.Define FA Type","2.FA String Testing","3.Convert from NFA to DFA","4.Minimize DFA"]
-print(*[name+"\n" for name in func_name])
-print("Please choose a functionality by input the functionality number:")
+while True:
+
+    print("Functionality:")
+    func_name = [" 1.Define FA Type","2.FA String Testing","3.Convert from NFA to DFA","4.Minimize DFA", "Q.Exit"]
+    print(*[name+"\n" for name in func_name])
+
+    divider()
+
+    choosed_function = input("Please choose a functionality by input the functionality number : ")
+    if choosed_function == '1':
+        FA = DefineFAType(fa_state,fa_symbols,fa_start_state,fa_final_state,fa_transition)
+        print("Your FA type is : " , FA.define())
+        divider()
+    elif choosed_function == '2':
+        FA = FAStringTesting()
+        divider()
+    elif choosed_function == '3':
+        FA = NfaToDfa()
+        divider()
+    elif choosed_function == '4':
+        FA = MinimizeDfa()
+        divider()
+    elif choosed_function.lower() == 'q':
+        print("You're exiting the program.......")
+        break
+    else:
+        print("Please input the right number")
