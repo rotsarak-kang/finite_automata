@@ -4,6 +4,7 @@ from Services.DefineFAType import DefineFAType
 from Services.FAStringTesting import FAStringTesting
 from Services.NfaToDfa import NfaToDfa
 from Services.MinimizeDfa import MinimizeDfa
+from Services.DesignFA import DesignFA
 
 def divider():
     print(*["-" for i in range(20)])
@@ -53,11 +54,18 @@ print("Symbols:", fa_symbols)
 print("Start state:", str(*fa_start_state))
 print("Final state:", fa_final_state)
 print("FA table transition:")
+FA_table_transition = DesignFA(
+    fa_state,
+    fa_symbols,
+    fa_start_state,
+    fa_final_state,
+    fa_transition
+)
+FA_table_transition.convertFaToDataframe()
 
 divider()
 
 while True:
-
     print("Functionality:")
     func_name = [" 1.Define FA Type","2.FA String Testing","3.Convert from NFA to DFA","4.Minimize DFA", "Q.Exit"]
     print(*[name+"\n" for name in func_name])
