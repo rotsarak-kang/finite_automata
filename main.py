@@ -78,7 +78,8 @@ while True:
         print("Your FA type is : " , FA.define())
         divider()
     elif choosed_function == '2':
-        FA = FAStringTesting()
+        string = input("Input your testing string e.g : abba : ")
+        FA = FAStringTesting(string,fa_state,fa_symbols,fa_start_state,fa_final_state,fa_transition)
         divider()
     elif choosed_function == '3':
         FA = NfaToDfa()
