@@ -30,4 +30,4 @@ class DesignFA:
                     data[ind].append(k)
             ind += 1
         df = pd.DataFrame(data,columns=self.symbol,index=self.state)
-        print(df)
+        return df
