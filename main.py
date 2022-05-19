@@ -61,7 +61,7 @@ FA_table_transition = DesignFA(
     fa_final_state,
     fa_transition
 )
-FA_table_transition.convertFaToDataframe()
+print(FA_table_transition.convertFaToDataframe())
 
 divider()
 
@@ -86,7 +86,8 @@ while True:
         FA = NfaToDfa()
         divider()
     elif choosed_function == '4':
-        FA = MinimizeDfa()
+        FA = MinimizeDfa(fa_state,fa_symbols,fa_start_state,fa_final_state,fa_transition)
+        print(FA.exce())
         divider()
     elif choosed_function.lower() == 'q':
         print("You're exiting the program.......")
