@@ -1,5 +1,3 @@
-import numpy as np
-import pandas as pd
 from Services.DefineFAType import DefineFAType
 from Services.FAStringTesting import FAStringTesting
 from Services.NfaToDfa import NfaToDfa
@@ -91,6 +89,7 @@ while True:
         divider()
     elif choosed_function.lower() == 'q':
         print("You're exiting the program.......")
+        exit()
         break
     else:
         print("Please input the right number")

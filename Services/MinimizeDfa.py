@@ -1,4 +1,4 @@
-from DesignFA import DesignFA
+from Services.DesignFA import DesignFA
 class MinimizeDfa:
     def __init__(self,state,symbols,start_state,final_state,transition):
         self.state = state
