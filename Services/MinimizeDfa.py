@@ -6,10 +6,6 @@ class MinimizeDfa:
         self.start_state = start_state
         self.final_state = final_state
         self.transition = transition
-        self.new_state = []
-        self.new_state_state = []
-        self.new_final_state = []
-        self.new_transition = []
 
     def generateDataFrame(self,fa_state,fa_symbols,fa_start_state,fa_final_state,fa_transition): #return to user as transition table
         fa = DesignFA(fa_state,fa_symbols,fa_start_state,fa_final_state,fa_transition)
