@@ -81,7 +81,8 @@ while True:
         print(FA.stringTesting())
         divider()
     elif choosed_function == '3':
-        FA = NfaToDfa()
+        FA = NfaToDfa(fa_state,fa_symbols,fa_start_state,fa_final_state,fa_transition)
+        FA.exec()
         divider()
     elif choosed_function == '4':
         FA = MinimizeDfa(fa_state,fa_symbols,fa_start_state,fa_final_state,fa_transition)
