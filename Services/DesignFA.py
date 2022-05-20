@@ -16,7 +16,9 @@ class DesignFA:
     def defineStartState(self):
         startstate = self.start_state
         for i in startstate:
-            if i in self.state:
+            if i in self.state and i in self.final_state:
+                self.state[self.state.index(i)] = "->*" + i
+            elif i in self.state:
                 self.state[self.state.index(i)] = "->"+i
     def convertFaToDataframe(self):
         self.defineStartState()
